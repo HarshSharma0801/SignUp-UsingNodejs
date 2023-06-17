@@ -1,0 +1,101 @@
+body{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#main{
+    background-color: hsl(0, 100%, 74%) ;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+#upperdiv{
+ background-image: url(images/bg-intro-desktop.png);
+ height: 700px;
+}
+
+
+.item1{
+   
+    padding-left: 60px;
+    padding-right: 60px;
+    
+}
+.item2{
+    padding:30px;
+    padding-left: 60px;
+    padding-right: 60px;
+} 
+.content1{
+    padding-left: 60px;
+    padding-right: 60px;
+    margin-top: 150px;
+    color: white;
+}
+.content2{
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+#top{
+    margin-left: 60px;
+    background-color: hsl(248, 32%, 49%);
+    border-radius: 15px ;
+    color: white;
+    width: 80%;
+    height: 80%;
+    padding: 10px;
+    border: none;
+}
+#bottom{
+    margin-left: 60px;
+    background-color: hsl(154, 59%, 51%);
+    border-radius: 15px ;
+    color: white;
+    width: 80%;
+    height: 80%;
+    padding: 10px;
+    border: none;
+}
+
+.form{
+    background-color: white;
+    border-radius: 15px ;
+    margin-top: 30px;
+    padding: 30px
+}
+.formitem{
+    width: 100%;
+    padding: 10px;
+}
+
+.error{
+    border: 1px solid red;
+
+}
+@media only screen and (max-width: 600px) {
+    #bottomdiv{
+        margin-right: 90px;
+    }
+    #topdiv{
+        margin-right: 50px;
+    }
+    h1{
+        text-align: center;
+        padding-bottom: 30px;
+        font-size: large;
+    }
+    contenttop{
+        text-align: center;
+    }
+    #footer{
+        padding: 5px;
+        font-size: 65%;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        
+    }
+  }
