@@ -2,11 +2,11 @@ const express = require('express');
 const app = express();
 const bodyparser = require('body-parser');
 const request = require('request');
-const client = require('@mailchimp/mailchimp_marketing');
-client.setConfig({apiKey: "f4b5f32f596c088654edffd496670ba6-us11",  server: "us11",});
+
 app.use(express.static(__dirname));
 app.use(bodyparser.urlencoded({extended:true}));
-
+const client = require("@mailchimp/mailchimp_marketing");
+client.setConfig({apiKey: "b689132182de0afe743a699e6b906b29-us11",  server: "us11",});
 app.get('/',(req,res)=>{
     res.sendFile(__dirname+'/index.html');
 })
@@ -22,20 +22,21 @@ app.post('/',(req,res)=>{
     var ename = req.body.emailname;
     var pname = req.body.passwordname;
     console.log(fname, lname, ename, pname);
-    const subscribingUser = {firstName: fname, lastName: lname, email: ename}
+
+    const subscribingUser = {firstName: fname, lastName: lname, email: ename , password:pname }
+
     const run = async () => {
         const response = await client.lists.addListMember("48d3ff07f8", {
           email_address: subscribingUser.email,
           status: "subscribed",
           merge_fields: {
               FNAME: subscribingUser.firstName,
-              LNAME: subscribingUser.lastName
+              LNAME: subscribingUser.lastName,
+              PASSWORD: subscribingUser.password
           }
         });
-        console.log(response);
-        console.log(response.statusCode) // (optional) 
+        console.log(response); // (optional) 
       };
-      run();
-      app.sendFile(__dirname+'/index.html');
+    run()
 })
 // 48d3ff07f8
