@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const bodyparser = require('body-parser');
-const  config = require('./secret.json');
+const  config = require('.private/secret.json');
 
 app.use(express.static(__dirname));
 app.use(bodyparser.urlencoded({extended:true}));
