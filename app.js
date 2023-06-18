@@ -1,12 +1,13 @@
 const express = require('express');
 const app = express();
 const bodyparser = require('body-parser');
-const request = require('request');
+const  config = require('./secret.json');
 
 app.use(express.static(__dirname));
 app.use(bodyparser.urlencoded({extended:true}));
+const apiKey = config.key;
 const client = require("@mailchimp/mailchimp_marketing");
-client.setConfig({apiKey: "b689132182de0afe743a699e6b906b29-us11",  server: "us11",});
+client.setConfig({apiKey: apiKey,  server: "us11",});
 app.get('/',(req,res)=>{
     res.sendFile(__dirname+'/index.html');
 })
