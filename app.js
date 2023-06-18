@@ -36,9 +36,8 @@ app.post('/',(req,res)=>{
               PASSWORD: subscribingUser.password
           }
         });
-        const dataFile = await response.json;
-        // console.log(response); // (optional) 
-        console.log(dataFile.statusCode);
+        console.log(response); // (optional) 
+
 
       };
     run()
